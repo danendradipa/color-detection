@@ -1,4 +1,5 @@
 # Image Color Detector 🔴🟠🟡🟢🔵🟣
+Scripting Language 2024
 
 Image Color Detector adalah aplikasi desktop berbasis Python dengan antarmuka grafis (GUI) untuk mendeteksi warna dominan dari sebuah gambar. Aplikasi ini memungkinkan pengguna untuk memilih gambar dan menampilkan palet warna utama beserta kode warna dalam format hexadecimal.
 
