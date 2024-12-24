@@ -1,3 +1,9 @@
+# Nama : 
+# Ataka Dzulfikar
+# Danendra Dipa Dananjaya
+# Alif Naywa Azzikra
+# Erwin Alam Syah Putra
+
 from tkinter import *
 from tkinter import filedialog
 from PIL import Image, ImageTk
@@ -11,7 +17,6 @@ def show_image():
                                           filetypes=[("Image files", "*.jpg *.jpeg *.png *.bmp *.gif")])
     if filename: 
         img = Image.open(filename)
-        # Image resizing   
         aspect_ratio = img.height / img.width
         target_width = 370
         target_height = int(aspect_ratio * target_width)
@@ -22,13 +27,11 @@ def show_image():
 
     
 def find_colors():
-    if not filename:  # Check if an image has been selected
+    if not filename:  
         return
 
     colorthief = ColorThief(filename)
     palette = colorthief.get_palette(color_count=12)
-
-    # Update color circles and hex labels
     for i, color in enumerate(palette):
         hex_color = f'#{color[0]:02x}{color[1]:02x}{color[2]:02x}'
         if i < 6:  # Left palette
@@ -38,15 +41,14 @@ def find_colors():
             colors_right.itemconfig(colors_right_circles[i - 6], fill=hex_color)
             hex_labels_right[i - 6].config(text=hex_color)
 
-# --------------------------------- UI SET UP -------------------------- #
 window = Tk()
 window.title("IMAGE COLOR DETECTOR")
 window.geometry('900x600')
-window.config(bg="#f0e68c")  # Light yellow background
+window.config(bg="#f0e68c")  
 window.resizable(False, False)
 
 # UI ICON
-icon = PhotoImage(file="logo.png")  # Ensure the icon file is available
+icon = PhotoImage(file="logo.png")  
 window.iconphoto(False, icon)
 
 # HEADER
